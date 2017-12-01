@@ -1,0 +1,33 @@
+{
+  "name": "snow",
+  "version": "1.0.0",
+  "description": "JavaScript plugin using HTML5 Canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoamIn/snow.git"
+  },
+  "keywords": [
+    "snow",
+    "javascript",
+    "canvas",
+    "html5"
+  ],
+  "author": "Live",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RoamIn/snow/issues"
+  },
+  "homepage": "https://github.com/RoamIn/snow#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.12.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-eslint": "^4.0.0"
+  }
+}
