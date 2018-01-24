@@ -166,7 +166,7 @@
     }
 
     if (settings.image !== false) {
-      $('<img src="' + settings.image + ' style="display: none" id="lis_flake">').prependTo('body')
+      $('<img src="' + settings.image + '" style="display: none" id="lis_flake">').prependTo('body')
     }
 
     init()
