@@ -1,22 +1,28 @@
+const del = require('del')
 const gulp = require('gulp')
 const babel = require('gulp-babel')
-const eslint = require('gulp-eslint')
 
-gulp.task('lint', () => {
-    return gulp.src(['src.js'])
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-});
+const paths = {
+  scripts: {
+    src: 'src/index.js',
+    dest: 'build/'
+  }
+}
 
-gulp.task('babel', () => {
-    gulp.src('src/index.js')
-    .pipe(babel({
-        presets: ['env']
-    }))
-    .pipe(gulp.dest('dist'))
-});
+// 清除 build 目录
+const clean = () => {
+  return del(paths.scripts.dest);
+}
 
-gulp.task('default', ['lint', 'babel'], () => {
+// babel
+const build = () => {
+  return gulp.src(paths.scripts.src)
+  .pipe(babel({
+    presets: ['es2015']
+  }))
+  .pipe(gulp.dest(paths.scripts.dest))
+}
 
-});
+gulp.task('clean', clean)
+gulp.task('build', build)
+gulp.task('default', gulp.series(build))
